@@ -1,1 +1,325 @@
-default
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavern Siegl Sinaga</title>
+    <style>
+       /* Base Styles */
+:root {
+    --primary-color: hsl(0, 0%, 100%); /* A clean blue for engineering */
+    --secondary-color: #ffffff;
+    --background-color: RGB(21,17,46);
+    --text-color: #333;
+    --light-text: #6c757d;
+    --header-height: 70px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color:RGB(21,17,46);
+    scroll-behavior: smooth;
+}
+
+/* Typography */
+h1 { font-size: 2.5em; margin-bottom: 0.5em; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
+h2 { font-size: 2em; margin-bottom: 1em; color: var(--secondary-color); text-align: center;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+h3 { color: var(--primary-color); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+p { margin-bottom: 1em; color: var(--light-text);font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
+
+/* Buttons & Links */
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* top bar */
+header {
+    background-color:RGB(21,17,46);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: var(--header-height);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+.logo::after{
+    content: " Sinaga";
+    color:#aaaaff
+}
+
+nav a {
+    margin-left: 25px;
+    color: var(--text-color);
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+@keyframes ctaanimation {
+  from {background-color: #5e96ff;}
+  to {background-color: #96a2ff;}
+}
+@keyframes ctaanimationback {
+  to {background-color: #5e96ff;}
+  from {background-color: #96a2ff;}
+}
+.cta-link {
+    background-color: #5e96ff;
+    color: #fff !important;
+    padding: 10px 17px;
+    border-radius: 21px;
+  animation-name: ctaanimationback;
+    animation-duration: 200ms;
+}
+
+.cta-link:hover {
+    background-color: #96a2ff;
+    animation-name: ctaanimation;
+    animation-duration: 200ms;
+}
+
+
+section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh; /* Ensures sections take up full viewport height */
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: calc(80px + var(--header-height)); /* Push content below fixed header */
+    min-height: 100vh;
+}
+
+.hero-content {
+    flex: 2;
+    padding-right: 40px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Expertise Section */
+.expertise {
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.expertise-grid {
+    display: flex;
+    gap: 20px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.expertise-item {
+    flex: 1;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Projects Section */
+.projects {
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    background-color: var(--background-color);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: grid;
+    gap: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #c9e8ff;
+    text-decoration: underline;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: calc(40px + var(--header-height));
+    }
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    .hero-image {
+        order: -1; /* Puts image on top on mobile */
+        margin-bottom: 20px;
+    }
+    .hero-image img {
+        max-width: 80%;
+    }
+
+    .expertise-grid {
+        flex-direction: column;
+    }
+    
+    header {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        display: none; /* Simple mobile hide for nav on small screens */
+        
+    }
+    header {
+        justify-content: center;
+    }
+    .logo {
+        font-size: 1.3em;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    section {
+        padding: 50px 20px;
+    }
+} 
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Kavern Siegl</div>
+        <nav>
+            <a href="/" style="color: RGB(255,255,255); font-size: 18px;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  ">Home</a>
+            <a href="/"style="color: RGB(255,255,255); font-size: 18px;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  ">Duodecane</a>
+            <a href="#projects"style="color: RGB(255,255,255); font-size: 18px;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  ">Projects</a>
+            <a href="mailto:kavern@sinaga.sbs" style="color: RGB(255,255,255); font-size: 18px;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  "class="cta-link">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Driving Innovation in **[Your Specific Field]**</h1>
+            <p>Seasoned **[Your Title]** specializing in complex systems design, embedded software, and sustainable solutions.</p>
+            <a href="#projects" class="button">View My Portfolio</a>
+        </div>
+        <div class="hero-image">
+            <img src="placeholder-engineer.jpg" alt="Professional Photo of [Your Name]">
+        </div>
+    </section>
+
+
+
+    <section id="expertise" class="expertise">
+        <h2>Core Expertise</h2>
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <h3>📐 System Design & Analysis</h3>
+                <p>Proficiency in full lifecycle system development, from concept generation to rigorous performance testing and validation.</p>
+            </div>
+            <div class="expertise-item">
+                <h3>🤖 Robotics & Automation</h3>
+                <p>Developing and deploying intelligent, automated solutions using modern control systems, PLC programming, and advanced sensor fusion.</p>
+            </div>
+            <div class="expertise-item">
+                <h3>💻 FEA/CFD Simulation</h3>
+                <p>Leveraging industry-standard tools (ANSYS, SolidWorks) to optimize performance, predict failure modes, and reduce prototyping costs.</p>
+            </div>
+        </div>
