@@ -9,7 +9,7 @@
 :root {
     --primary-color: hsl(0, 0%, 100%); /* A clean blue for engineering */
     --secondary-color: #ffffff;
-    --background-color: RGB(21,17,46);
+    --background-color: #1e293b;
     --text-color: #333;
     --light-text: #6c757d;
     --header-height: 70px;
@@ -25,7 +25,7 @@ body {
  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color:RGB(21,17,46);
+    background-color:#0d1a26;
     scroll-behavior: smooth;
 }
 
@@ -38,18 +38,23 @@ p { margin-bottom: 1em; color: var(--light-text);font-family:'Trebuchet MS', 'Lu
 /* Buttons & Links */
 .button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: #5e96ff;
     color: #fff !important;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
     border: none;
     cursor: pointer;
+    opacity: 0;
+     animation-name: fadeInUp;
+    animation-duration: 0.5s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards; 
 }
 
 .button:hover {
-    background-color: var(--secondary-color);
+    background-color:#96a2ff;
 }
 
 a {
@@ -59,7 +64,7 @@ a {
 
 /* top bar */
 header {
-    background-color:RGB(21,17,46);
+    background-color:#0d1a26;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -124,35 +129,84 @@ section {
     min-height: 100vh; /* Ensures sections take up full viewport height */
 }
 
-.hero {
+.info {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: calc(80px + var(--header-height)); /* Push content below fixed header */
     min-height: 100vh;
 }
+@keyframes fadeInUp {
+    /* Starting state (0% of the animation time) */
+    0% {
+        opacity: 0; /* Completely invisible */
+        transform: translateY(20px); /* Start 20 pixels lower */
+    }
 
-.hero-content {
+    /* Ending state (100% of the animation time) */
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move back to the original position */
+    }
+}
+@keyframes opacityanim {
+    /* Starting state (0% of the animation time) */
+    0% {
+        opacity: 0; /* Completely invisible */
+     
+    }
+
+    /* Ending state (100% of the animation time) */
+    100% {
+        opacity: 1; /* Fully visible */
+      
+    }
+}
+.fadein {
+    opacity: 0;
+
+    /* Apply the keyframe animation */
+    animation-name: fadeInUp;
+    animation-duration: 0.5s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards; /* IMPORTANT: Keeps the final state (opacity: 1) after the animation finishes */
+ /* animation-delay: 0.1s; /* Wait a little bit before starting */
+}
+.info-content {
     flex: 2;
     padding-right: 40px;
 }
-
-.hero-image {
+.info-content h1 {
+    color: #fff;
+}
+.info-image {
     flex: 1;
     text-align: right;
+
+       opacity: 0;
+      animation-name: opacityanim;
+    animation-duration: 0.5s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards;
 }
 
-.hero-image img {
+.info-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    opacity: 0;
+      animation-name: opacityanim;
+    animation-duration: 0.5s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards;
 }
 
 /* Expertise Section */
 .expertise {
     background-color: var(--background-color);
     text-align: center;
+      border-radius: 12px;
 }
 
 .expertise-grid {
@@ -234,20 +288,25 @@ footer a {
 
 /* --- Media Queries for Responsiveness --- */
 @media (max-width: 900px) {
-    .hero {
+    .info {
         flex-direction: column;
         text-align: center;
         padding-top: calc(40px + var(--header-height));
+    
     }
-    .hero-content {
+    .info-content h1 {
+          color: #fff;
+    }
+    .info-content {
         padding-right: 0;
         margin-bottom: 30px;
+   
     }
-    .hero-image {
+    .info-image {
         order: -1; /* Puts image on top on mobile */
         margin-bottom: 20px;
     }
-    .hero-image img {
+    .info-image img {
         max-width: 80%;
     }
 
@@ -288,37 +347,19 @@ footer a {
             <a href="/" style="color:#ffffff">Home</a>
             <a href="/">Duodecane</a>
             <a href="#projects">Projects</a>
-            <a href="mailto:kavern@sinaga.sbs" style="color: RGB(255,255,255); font-size: 18px;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            <a href="/contact" style="color: RGB(255,255,255); font-size: 18px;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   "class="cta-link">Contact</a>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Driving Innovation in **[Your Specific Field]**</h1>
-            <p>Seasoned **[Your Title]** specializing in complex systems design, embedded software, and sustainable solutions.</p>
-            <a href="#projects" class="button">View My Portfolio</a>
+    <section id="home" class="info">
+        <div class="info-content">
+            <h1 class="fadein" style="animation-delay: 200ms;">Driving Innovation in Small-scale Machinery</h1>
+            <p class="fadein" style="animation-delay: 350ms;">Freelance entrepreneur specializing in small-scale manufacturing, research, and industrial machinery</p>
+            <a href="#projects" class="button" style="animation-delay: 500ms;" >View My Portfolio</a>
         </div>
-        <div class="hero-image">
-            <img src="placeholder-engineer.jpg" alt="Professional Photo of [Your Name]">
+        <div class="info-image" style="animation-delay: 650ms;">
+            <img src="testpic.png" alt="Failed to load...">
         </div>
     </section>
-
-
-
-    <section id="expertise" class="expertise">
-        <h2>Core Expertise</h2>
-        <div class="expertise-grid">
-            <div class="expertise-item">
-                <h3>📐 System Design & Analysis</h3>
-                <p>Proficiency in full lifecycle system development, from concept generation to rigorous performance testing and validation.</p>
-            </div>
-            <div class="expertise-item">
-                <h3>🤖 Robotics & Automation</h3>
-                <p>Developing and deploying intelligent, automated solutions using modern control systems, PLC programming, and advanced sensor fusion.</p>
-            </div>
-            <div class="expertise-item">
-                <h3>💻 FEA/CFD Simulation</h3>
-                <p>Leveraging industry-standard tools (ANSYS, SolidWorks) to optimize performance, predict failure modes, and reduce prototyping costs.</p>
-            </div>
-        </div>
+</body>
