@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavern Siegl Sinaga</title>
+    <title>Kavern Siegl Sinaga | Contact</title>
     <style>
        /* root */
        /*
@@ -30,7 +30,7 @@
     --contactbgoutline:#304e6c; 
     --contacthorizontalline:#334155;
     --contactbg: #1e293b;   
- 
+     --color-accent: #334155;
     --contactbgshadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 
     
@@ -69,7 +69,7 @@ p { margin-bottom: 1em; color: var(--textcolgrey);font-family:var(--pfont); }
     cursor: pointer;
     opacity: 0;
     animation-name: introanim1;
-    animation-duration: 0.5s; /* How long the animation takes */
+    animation-duration: 0.3s; /* How long the animation takes */
     animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
     animation-fill-mode: forwards; 
 }
@@ -134,13 +134,6 @@ nav a:hover {
 }
 
 
-section {
-    padding: 80px 40px;
-    max-width: 1200px;
-    margin: auto;
-    min-height: 100vh; /* Ensures sections take up full viewport height */
-}
-
 .info {
     display: flex;
     align-items: center;
@@ -179,7 +172,7 @@ section {
 
     /* Apply the keyframe animation */
     animation-name: introanim1;
-    animation-duration: 0.5s; /* How long the animation takes */
+    animation-duration: 0.3s; /* How long the animation takes */
     animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
     animation-fill-mode: forwards; /* IMPORTANT: Keeps the final state (opacity: 1) after the animation finishes */
  /* animation-delay: 0.1s; /* Wait a little bit before starting */
@@ -207,10 +200,139 @@ section {
 
     /* Apply the keyframe animation */
     animation-name: introanim1;
-    animation-duration: 0.5s; /* How long the animation takes */
+    animation-duration: 0.3s; /* How long the animation takes */
     animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
     animation-fill-mode: forwards;
     animation-delay: 300ms;
+}
+
+/* whole contact layout */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr; /* Form is wider */
+    gap: 70px;
+}
+
+@media (max-width: 992px) {
+    .contact-layout {
+        grid-template-columns: 1fr; /* Stack vertically on tablets/mobiles */
+        gap: 40px;
+    }
+}
+
+.contact-left {
+ /*   background-color: #8f93a2;/*for testing */
+}
+/*rght*/
+.contact-right {
+ /*   background-color: #8f93a2;/*for testing */
+    margin-left: 25px;
+}
+.info-card {
+    padding: 15px;
+   /* margin: 25px 30px;*/
+   margin-bottom: 50px;
+    background-color: #2a3a4c; /* Slightly darker card background */
+    border-radius: 8px;
+    border-left: 3px solid var(--buttoncol);
+    animation-name: introanim1;
+    animation-duration: 0.3s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.info-card h3 {
+    font-size: 1.2em;
+    color: var(--textcol);
+    margin-bottom: 3px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.info-card p {
+    color: var(--textcolgrey);
+      text-align: left;
+      margin-bottom: 0px;
+}
+
+.info-card a {
+    color: var(--textcolgrey);
+    text-decoration: none;
+    transition: color 0.2s;
+      text-align: left;
+}
+
+.info-card a:hover {
+    color: var(--buttoncolclick);
+    text-decoration: underline;
+}
+
+/* --- Social Links --- */
+.social-block {
+    margin-top: 40px;
+}
+
+.social-block h3 {
+  font-size: 1.2em;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.social-link {
+    animation-name: introanim1;
+    animation-duration: 0.3s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards;
+    opacity: 0;
+    display: inline-block;
+     text-align: left;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 1.1em;
+    border: 1px solid var(--contactbgoutline);
+    border-radius: 4px;
+    color: var(--buttoncol);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+    animation-name: introanim1;
+    animation-duration: 0.3s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards;
+    animation-delay: 340ms;
+    opacity: 0;
+}
+
+.social-link:hover {
+    background-color: var(--buttoncol);
+    color: var(--textcol);
+    border-color: var(--buttoncol);
+}
+/*end of right*/
+
+.contact-left h2, .contact-right h2 {
+    color: var(--textcol);
+    margin-bottom: 30px;
+    font-size: 1.6em;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 5px;
+    /*display: inline-block;*/
+    text-align: left;
+    
+     animation-name: introanim1;
+    animation-duration: 0.3s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+.form-group {
+    margin-bottom: 25px;
 }
 
 /* Footer */
@@ -250,9 +372,7 @@ footer a {
     h1 {
         font-size: 2em;
     }
-    section {
-        padding: 50px 20px;
-    }
+  
 } 
     </style>
 </head>
@@ -269,9 +389,64 @@ footer a {
     </header>
     <footer>
          <div class="contact-wrapper">
-            <h1 class="fadein" style="animation-delay: 200ms; font-size: 3em;">Contact Us</h1>
-           <p class="fadein" style="animation-delay: 250ms; font-size: 1.5em; margin-left: 15%;margin-right: 15%;">Ready to collaborate? We welcome inquiries regarding project proposals, partnership opportunities, or general consulting. Please reach out, and we will respond promptly.</p>
+            <h1 class="fadein" style="animation-delay: 200ms; font-size: 3em;">Contact</h1>
+           <p class="fadein" style="animation-delay: 250ms; font-size: 1.5em; margin-left: 15%;margin-right: 15%;">Ready to consult? I welcome inquiries regarding partnership opportunities, proposals, and other ventures. Please reach out, and I will respond promptly to any inquiries.</p>
             <div class="horizontal-line"></div>
+        
+            <div class="contact-layout">
+
+                <section class="contact-left">
+                    <h2 style="animation-delay: 325ms;">Contact me</h2>
+                    <form action="#" method="POST" class="contact-form">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" placeholder="Name@site.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="topic">Topic / Service of Interest</label>
+                        <input type="text" id="topic" name="topic" placeholder="e.g., Business, Research">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Describe your inquiries, requirements, needs, or proposals..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+                </section>
+
+                <aside class="contact-right">
+                    <h2 style="animation-delay: 325ms;">Contact details</h2>
+                
+                <div class="info-card" style="animation-delay: 340ms;">
+                    <h3>Mailing Info</h3>
+                    <p>Jalan Kencana Loka Raya Sektor 12 No.8</p>
+                    <p>BSD City, Kota Tangerang Selatan, Banten 15310</p>
+                </div>
+
+                <div class="info-card" style="animation-delay: 360ms;">
+                    <h3>Contact Info</h3>
+                    <p style="white-space:pre">Email&#9:<a href="mailto:kavern@sinaga.sbs"> kavern@sinaga.sbs</a></p>
+                    <p style="white-space:pre">Phone&#9:<a href="tel:+15551234567"> +62 8118 1337 12</a></p>
+                </div>
+                
+                <div class="social-block" style="animation-delay: 380ms;">
+                    <h2 style="margin-bottom: 12px; animation-delay: 390ms;">Common Connections</h2>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="https://github.com/vernthedragon" class="social-link">GitHub</a>
+                    <a href="mailto:kavern@sinaga.sbs" class="social-link">Email</a>
+                </div>
+
+                </aside>
+            </div>
          </div>
     </footer>
 
