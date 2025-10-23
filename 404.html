@@ -71,7 +71,32 @@ svg{
     display: block;
    margin: auto;
 }
+@keyframes introanim1 {
+    /* Starting state (0% of the animation time) */
+    0% {
+        opacity: 0; /* Completely invisible */
+        transform: translateY(20px); /* Start 20 pixels lower */
+    }
 
+    /* Ending state (100% of the animation time) */
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move back to the original position */
+    }
+}
+@keyframes introanim2 {
+    /* Starting state (0% of the animation time) */
+    0% {
+        opacity: 0; /* Completely invisible */
+     
+    }
+
+    /* Ending state (100% of the animation time) */
+    100% {
+        opacity: 1; /* Fully visible */
+      
+    }
+}
 #clock{
     animation: clockHand 5s infinite linear;
     
@@ -233,8 +258,14 @@ svg{
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10 main-title">
-          <h1 style="color: #fff;">:&#40;</h1>
-          <h2>under maintenance</h2>
+          <h1 style="color: #fff;   animation-name: introanim1;
+    animation-duration: 0.3s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards; animation-delay: 200ms; opacity: 0;">:&#40;</h1>
+          <h2 style="  animation-name: introanim1;
+    animation-duration: 0.3s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards; animation-delay: 260ms; opacity: 0;">under maintenance</h2>
         </div>
       </div>
       <div class="row align-items-center">
@@ -243,6 +274,11 @@ svg{
             viewBox="0 0 834 690"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            style="  animation-name: introanim2;
+    animation-duration: 0.77s; /* How long the animation takes */
+    animation-timing-function:cubic-bezier(.51,1.11,.74,.98); /* Controls the speed curve */
+    animation-fill-mode: forwards; 
+    animation-delay: 400ms; opacity: 0;"
           >
             <g id="undraw_dev_productivity_umsq 1" clip-path="url(#clip0)">
               <g id="man">
